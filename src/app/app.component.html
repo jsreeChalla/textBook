@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="header">
+  <div class="navbar"  *ngFor="let item of Subjects">
+    <button class="item" id="{{item.id}}" (click)=chooseSubject($event)>{{item.subject}}</button>
+  </div>
+</div>
+<br>
+<div class="search"> 
+ <span class="label">Search for Chapters and Topics </span>
+ <input class="form-control" style=" height:20px;" type="text" value="" id="search" (input)="search($event)">
+ <br>
+<div *ngIf=searchActive>
+ <ul  class="SearchResults" *ngFor="let result of searchResults">
+  <li>{{result}}</li>
+ </ul>
+</div>
+</div>
+<br>
+  <div class="content" *ngIf=selection>
+      <div class="cards" *ngFor="let chapter of selectedChapters">
+        <div class="card">
+          <div class="label">{{chapter.chapterName}}</div>
+          <ul class="topics" *ngFor="let topic of chapter.topics">
+            <li>{{topic}}</li>
+          </ul>
+
+        </div>
+      </div>
+  </div>
+  
+</div>
+
