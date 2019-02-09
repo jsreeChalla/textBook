@@ -6,7 +6,7 @@
   </div>
 </div>
 <br>
-<div class="search"> 
+<div class="search">
  <span class="label">Search for Chapters and Topics </span>
  <input class="form-control" style=" height:20px;" type="text" value="" id="search" (input)="search($event)">
  <br>
@@ -18,6 +18,9 @@
 </div>
 <br>
   <div class="content" *ngIf=selection>
+    <div class="label">
+      Subject: {{subjectName}}
+    </div>
       <div class="cards" *ngFor="let chapter of selectedChapters">
         <div class="card">
           <div class="label">{{chapter.chapterName}}</div>
@@ -28,6 +31,5 @@
         </div>
       </div>
   </div>
-  
-</div>
 
+</div>

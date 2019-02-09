@@ -7,6 +7,7 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "textBook";
+  subjectName="";
   selectedChapters: Array<any> = [];
   selection: boolean = false;
   searchActive:boolean=false;
@@ -14,10 +15,11 @@ export class AppComponent {
     { id: 0, subject: "Mathematics" },
     { id: 1, subject: "Physics" },
     { id: 2, subject: "Chemistry" }
-  ];
-  Chapters: Array<any> = [];
-  topics: Array<any> = [];
-  searchResults:Array<any> =[];
+  ];//list of subjects
+  Chapters: Array<any> = []; //list of chapters for search
+  topics: Array<any> = [];//list of topics for search
+  searchResults:Array<any> =[];//list of search results
+  //subjects with diffrent chapters and its topics
   TextBookData: Array<any> = [
     {
       subject: "Mathematics",
@@ -146,7 +148,7 @@ export class AppComponent {
       if (subject == this.TextBookData[i].subject) {
         this.selectedChapters = this.TextBookData[i].chapters;
         this.selection = true;
-       
+        this.subjectName=subject;
       }
     }
   }
